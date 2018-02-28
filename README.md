@@ -1,5 +1,5 @@
 # Bomberman-Grade-11-
-Code written in Java within a month.
+Code written in Java within a month when I was in Grade 11.
 Final Project for my Grade 12 Computer Science Course.
 Sprites were taken off from the internet.
 I am not sure how to make a .jar file with a Java Applet. 
