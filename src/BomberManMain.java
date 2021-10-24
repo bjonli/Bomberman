@@ -1,22 +1,26 @@
 // The "BomberManMain" class.
-import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
 import java.util.*;
 import java.net.URL;
 
-public class BomberManMain extends Applet implements KeyListener
+public class BomberManMain extends JFrame implements KeyListener
 {
     //LIST OF VARIABLES
-    
 	
-    // applet variables for graphics
+    // variables for graphics
     Graphics finalImage;
     Dimension dim= new Dimension(510,500);
-
+    JPanel p = new JPanel();
+    
     // Variables for timer
     Timer timer;
     int delay=40; 
@@ -40,17 +44,23 @@ public class BomberManMain extends Applet implements KeyListener
     
     long cTime=0;               // for test runs
     
-    public void init ()
-    {   
+    BomberManMain() {
         // sets graphics
         setSize(dim);
-        finalImage=getGraphics();
+        JPanel p = new JPanel();
+        p.setPreferredSize(dim);
+        this.add(p);
+        pack();
+        setVisible(true);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        finalImage=p.getGraphics();
         
         // set up boolean array
         for(int i=0;i<223;i++){
             keyStates[i]=false;
         } 
-
+        
         gamePart=3;
         s=new SettingsClass();
         // add class
@@ -63,17 +73,12 @@ public class BomberManMain extends Applet implements KeyListener
         }
         catch(Exception e){}
         
+        
         timer=new Timer();
         timer.scheduleAtFixedRate(new timeTask(),200,delay); 
-        // Place the body of the initialization method here
-    } // init method
-    
-    
-    public void main() {
-    	init();
     }
     
-    // opens text file outlining player contrls and instructions on playing bomberman
+    // opens text file outlining player controls and instructions on playing bomberman
     public void openInstructions() throws Exception {
     	URL u = BomberManMain.class.getClassLoader().getResource("BombermanInstructions.txt");
     	File file = new File(u.toURI());
@@ -86,14 +91,14 @@ public class BomberManMain extends Applet implements KeyListener
             switch(gamePart){
                 // case 3 is running the settings menu
                 case 3:
-                    if(setMenu.runSettings(finalImage,s,keyStates,dim)){
-                        round=new RoundClass(dim,s); 
+                    if(setMenu.runSettings(finalImage,s,keyStates,dim,p)){
+                    	round=new RoundClass(dim,s); 
                         gamePart=5;
                     }
                     break;
                 // case 5 is running the actual game
                 case 5:
-                    if(round.runRound(finalImage,keyStates,delay,dim)){
+                    if(round.runRound(finalImage,keyStates,delay,dim,p)){
                         setMenu=new SettingsScreenClass(dim);
                         gamePart=3;
                     }

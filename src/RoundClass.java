@@ -1,10 +1,12 @@
 // The "RoundClass" class.
-import java.applet.*;
 import java.awt.*;
 import java.util.*;
+
+import javax.swing.JPanel;
+
 import java.awt.image.BufferedImage;
 
-public class RoundClass extends Applet
+public class RoundClass
 {
     // Graphics modules for preliminary drawing
     Graphics g, Buffered_Image; 
@@ -489,7 +491,7 @@ public class RoundClass extends Applet
     }
     
     // runs an average round
-    public boolean runRound (Graphics finalImage,boolean [] keyStates,int delay,Dimension dim)
+    public boolean runRound (Graphics finalImage,boolean [] keyStates,int delay,Dimension dim, JPanel p)
     {
         // chenges the text if the textTimer=0
         if(textTimer==0){
@@ -597,7 +599,7 @@ public class RoundClass extends Applet
         }
         
         // output image into the second image canvas
-        Buffered_Image.drawImage(offscreen,0,0,this); 
+        Buffered_Image.drawImage(offscreen,0,0,p); 
 
         changeFadeAmount(keyStates);
         
@@ -623,7 +625,7 @@ public class RoundClass extends Applet
         }
         
         // draws the final image
-        finalImage.drawImage(combinedImage,0,0,this);
+        finalImage.drawImage(combinedImage,0,0,p);
         
         // if player chooses to quit game, runRound returns true.
         if(roundSection==-1&&endRound){

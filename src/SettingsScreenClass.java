@@ -1,14 +1,16 @@
-import java.applet.*;
 import java.awt.*;
 import java.util.*;
 import java.awt.image.BufferedImage;
+import java.awt.image.ImageObserver;
 import java.io.*;
 import java.net.URL;
 
 import javax.imageio.ImageIO;
+import javax.swing.JPanel;
+
 import java.awt.image.BufferedImage;
 
-public class SettingsScreenClass extends Applet{
+public class SettingsScreenClass {
 
     // Graphics modules for preliminary drawing
     private Graphics g;
@@ -29,7 +31,9 @@ public class SettingsScreenClass extends Applet{
     // Files that store all the images to be used in the Menu
     private static final URL spriteSheetFile = SettingsScreenClass.class.getClassLoader().getResource("BombSprites.png");
     private static final URL playerIconFile = SettingsScreenClass.class.getClassLoader().getResource("PlayerIconSpritesDraft.png");
-     
+    // private static final File spriteSheetFile = new File("BombSprites.png");
+    // private static final File playerIconFile = new File("PlayerIconSpritesDraft.png");
+    
     // image that stores the spritesheets
     private static BufferedImage spriteSheet=new BufferedImage(120,40,BufferedImage.TYPE_INT_ARGB);   
     private static BufferedImage iconSheet=new BufferedImage(100,125,BufferedImage.TYPE_INT_ARGB);    
@@ -413,7 +417,7 @@ public class SettingsScreenClass extends Applet{
     }
     
     // runs Setting Menu, if returns true, the program should move on to the rest of the game
-    public boolean runSettings(Graphics finalImage,SettingsClass settings,boolean [] keyStates,Dimension dim){
+    public boolean runSettings(Graphics finalImage,SettingsClass settings,boolean [] keyStates,Dimension dim, JPanel p){
         //draws background rectangle
         g.setColor(Color.lightGray);
         g.fillRect(0,0,dim.width,dim.height);
@@ -448,7 +452,7 @@ public class SettingsScreenClass extends Applet{
         g.fillRect(0,0,dim.width,dim.height);
         
         // double buffers
-        finalImage.drawImage(l1,0,0,this);
+        finalImage.drawImage(l1, 0, 0, p);
         if(endPart&&fadeAmount==12){
             return true;
         }
