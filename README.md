@@ -1,11 +1,14 @@
 # Bomberman
-Code written in Java within a month when I was in Grade 11.
-Final Project for my Grade 12 Computer Science Course.
-Sprites were taken off from the internet.
+Recreated the classic game. Sprites were taken off from the internet.
+Instructions on how to play can be found in the BombManInstructions.txt
 
-I am not sure how to make a .jar file with a Java Applet. 
-Thus, to run the program, you need to open the project using an IDE like Eclipse and run the file "BomberManMain.java" (sorry)
+This project used to use Java Applets, however applets have been deprecated on web browsers for a while.
+I went back and switched to the Swing Library so that I can export this as an executable jar.
+You should be able to run the game through the BomberMan.jar, assuming you have Java set up correctly.
+I should work on the latest Java (Java 17.0.1, as of writing)
 
-Controls and rules can be read from the textfile that opens once the application runs. 
-If I were to continue working on this, I would add more options for players such as initial power ups and maps.
-I would also try and incorporate networking so that 4 players do not need to share a keyboard, but that would take tons of time. 
+![Settings Example](./SettingsExample.PNG)
+
+![Settings Example](./GameExample.PNG)
+
+Possible next steps of this project would be to have controls be configurable, add sound. Adding a simple CPU would also be cool.
