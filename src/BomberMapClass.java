@@ -4,6 +4,7 @@ import java.awt.*;
 import java.io.*;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
+import java.net.URL;
 
 // class that performs all actions related to the battle arena. Stores all sprites used for drawing explosions/tiles. 
 public class BomberMapClass
@@ -13,14 +14,14 @@ public class BomberMapClass
     protected static int TL_CORNERY = 120;
 
     // Files that store sprites of each tile, explosion, and powerup
-    private static File mapFile = new File ("DefaultMap.png");
-    private static File explosionFile = new File ("ExplosionSprites.png");
-    private static File powerUpFile=new File("PowerUps.png");
+    private static URL mapFile = BomberMapClass.class.getClassLoader().getResource("DefaultMap.png");
+    private static URL explosionFile = BomberMapClass.class.getClassLoader().getResource("ExplosionSprites.png");
+    private static URL powerUpFile = BomberMapClass.class.getClassLoader().getResource("PowerUps.png");
     
     // Sprite sheet that reads Image files
     private static BufferedImage mapSheet = new BufferedImage (1000, 1000, BufferedImage.TYPE_INT_ARGB);
     private static BufferedImage explosionSheet = new BufferedImage (500, 500, BufferedImage.TYPE_INT_ARGB);
-    private static BufferedImage powerUpSheet=new BufferedImage(175, 75, BufferedImage.TYPE_INT_ARGB);
+    private static BufferedImage powerUpSheet = new BufferedImage(175, 75, BufferedImage.TYPE_INT_ARGB);
     
     // Array that stores the most common tiles (Walls,2 open tiles, barriers)
     private static BufferedImage[] commonBlocks = new BufferedImage [4];
@@ -58,40 +59,40 @@ public class BomberMapClass
     }
 
     // sets the image file used for map tiles
-    public void setMapFile (File f)
+    public void setMapFile (URL f)
     {
         mapFile = f;
     }
 
 
     // returns the image file used for map tiles
-    public File getMapFile ()
+    public URL getMapFile ()
     {
         return mapFile;
     }
 
     // sets the image file used for explosions
-    public void setExplosionFile (File f)
+    public void setExplosionFile (URL f)
     {
         explosionFile = f;
     }
 
 
     // retursn the image file used for explosions
-    public File getExplosionFile ()
+    public URL getExplosionFile ()
     {
         return explosionFile;
     }
 
     // sets the file used for powerups
-    public void setPowerUpFile (File f)
+    public void setPowerUpFile (URL f)
     {
         powerUpFile = f;
     }
 
 
     // returns the file used for powerups
-    public File getPowerUpFile ()
+    public URL getPowerUpFile ()
     {
         return powerUpFile;
     }

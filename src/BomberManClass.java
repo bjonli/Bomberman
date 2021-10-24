@@ -2,6 +2,7 @@
 import java.awt.*;
 //import hsa.Console;
 import java.io.*;
+import java.net.URL;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 
@@ -10,8 +11,8 @@ public class BomberManClass extends ObjectClass
 {
 
     // Files that store all images to be used for drawing the Bombermen. They are static because all instances will use the same file.
-    private static File spriteSheetFile=new File("SpriteSheetDraft15.png");
-    private static File playerIconFile=new File("PlayerIconSpritesDraft.png");
+    private static URL spriteSheetFile=BomberManClass.class.getClassLoader().getResource("SpriteSheetDraft15.png");
+    private static URL playerIconFile=BomberManClass.class.getClassLoader().getResource("PlayerIconSpritesDraft.png");
     // Images that store the spriteSheets for the Bombermen. 
     private static BufferedImage spriteSheet=new BufferedImage(1000,1000,BufferedImage.TYPE_INT_ARGB);
     private static BufferedImage iconSheet=new BufferedImage(100,125,BufferedImage.TYPE_INT_ARGB);
@@ -462,22 +463,22 @@ public class BomberManClass extends ObjectClass
     }
     
     // sets the image file storing the sprite Sheet of bombermen
-    public void setSpriteSheetFile(File f){
+    public void setSpriteSheetFile(URL f){
         spriteSheetFile=f;
     }
     
     // gets the image file storing the spriteSheet of bombermen
-    public File getSpriteSheetFile(){
+    public URL getSpriteSheetFile(){
         return spriteSheetFile;
     }
     
     // sets the image file storing the player icons
-    public void setPlayerIconFile(File f){
+    public void setPlayerIconFile(URL f){
         playerIconFile=f;
     }
     
     // returns the image file storing the player icons
-    public File getPlayerIconFile(){
+    public URL getPlayerIconFile(){
         return playerIconFile;
     }
 

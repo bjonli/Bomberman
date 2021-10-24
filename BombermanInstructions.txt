@@ -1,0 +1,61 @@
+HOW TO PLAY BOMBERMAN
+You are a bomberman, you can move up, left, right and down. Specific keys are found at the bottom of this text document.
+
+You can place bombs on the current tile that you are standing on. These bombs will detonate after some time, or if an explosion hits the bomb. Touching and explosions will kill you. Explosion can destroy brown bricks. Those bricks have a chance of spawning a powerup. 
+
+Your objective is to eliminate all other enemies. If your team manages to survive 1 second longer than every other team, your team wins the round. 
+Be careful, as your own bombs can also kill you. Do not trap yourself!
+
+When playing, your bomberman can grow stronger/weaker when collecting powerups.     
+
+List of Powerups:
+
+Blue Borders
+PowerUp (Flame) 	- increases blast radius of your bomb by 1
+BombUp (Bomb) 		- increases the maximum number of bombs you can have on the field at a time by 1
+SpeedUp (Shoes) 	- increases the speed of your Bomberman
+
+Red Borders
+PowerDown (Flame) 	- decreases blast radius of your bomb by 1
+BombDown (Bomb) 	- decreases the maximum number of bombs you can have on the field at a time by 1
+SpeedDown (Shoes) 	- decreases the speed of your Bomberman
+
+Other Powerups:
+Kick			- Allows you to kick bombs. Bombs will move until it hits a wall or other object
+MaxPower		- sets the blast radius of your bomb to the max
+Skull			- Does one of 3 things (Lasts 20 seconds)
+				- Bomberman mover very slowly
+				- Controls are reversed
+				- A Bomb will always be placed if you are able to 
+
+What is SuddenDeath?
+When there is only 30 seconds left in a round, the arena begins to vlose in on itself. It is advisable to move to the center while it is happening. 
+
+Controls:
+Player 1:
+	Move Up:	W
+	Move Down:	S
+	Move Right:	D
+	Move Left:	A
+	Plant Bomb:	E
+
+Player 2:
+	Move Up:	UP_ARROW_KEY
+	Move Down:	DOWN_ARROW_KEY
+	Move Right:	RIGHT_ARROW_KEY
+	Move Left:	LEFT_ARROW_KEY
+	Plant Bomb:	SHIFT_KEY
+
+Player 3:
+	Move Up:	T
+	Move Down:	G
+	Move Right:	H
+	Move Left:	F
+	Plant Bomb:	Y
+
+Player 4:
+	Move Up:	I
+	Move Down:	K
+	Move Right:	L
+	Move Left:	J
+	Plant Bomb:	O

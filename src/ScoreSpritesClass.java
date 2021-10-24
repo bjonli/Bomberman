@@ -4,20 +4,22 @@ import java.awt.*;
 import java.io.*;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
+import java.net.URL;
+
 
 // objects that writes the score of eahc player using images
 public class ScoreSpritesClass
 {
     // Image file that stores the spritesheet
-    private static File spriteFile=new File("scores.png");
+    private static URL spriteFile = ScoreSpritesClass.class.getClassLoader().getResource("scores.png");
     // Sprite sheet
-    private static BufferedImage spriteSheet=new BufferedImage(235,35,BufferedImage.TYPE_INT_ARGB); 
+    private static BufferedImage spriteSheet = new BufferedImage(235,35,BufferedImage.TYPE_INT_ARGB); 
     // width of each image 
-    private static int spriteWidth=16;
+    private static int spriteWidth = 16;
     // array that stores the image for each digit
-    private static BufferedImage[] sprites=new BufferedImage[10];
+    private static BufferedImage[] sprites = new BufferedImage[10];
     // stores if the image file has been read or not
-    private static boolean variablesInitialized=false;
+    private static boolean variablesInitialized = false;
     
     // constructor that assigns value to image array
     ScoreSpritesClass(){

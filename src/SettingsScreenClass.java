@@ -3,6 +3,8 @@ import java.awt.*;
 import java.util.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.net.URL;
+
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 
@@ -25,9 +27,9 @@ public class SettingsScreenClass extends Applet{
     int fadeAmount=0;                                           // fadeAmount for the first rectangle (for drawing winner screen)
 
     // Files that store all the images to be used in the Menu
-    private static final File spriteSheetFile= new File("BombSprites.png");
-    private static File playerIconFile=new File("PlayerIconSpritesDraft.png");
-    
+    private static final URL spriteSheetFile = SettingsScreenClass.class.getClassLoader().getResource("BombSprites.png");
+    private static final URL playerIconFile = SettingsScreenClass.class.getClassLoader().getResource("PlayerIconSpritesDraft.png");
+     
     // image that stores the spritesheets
     private static BufferedImage spriteSheet=new BufferedImage(120,40,BufferedImage.TYPE_INT_ARGB);   
     private static BufferedImage iconSheet=new BufferedImage(100,125,BufferedImage.TYPE_INT_ARGB);    

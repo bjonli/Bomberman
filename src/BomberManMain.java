@@ -2,14 +2,17 @@
 import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.*;
+import java.net.URL;
 
 public class BomberManMain extends Applet implements KeyListener
 {
     //LIST OF VARIABLES
     
+	
     // applet variables for graphics
     Graphics finalImage;
     Dimension dim= new Dimension(510,500);
@@ -72,8 +75,9 @@ public class BomberManMain extends Applet implements KeyListener
     
     // opens text file outlining player contrls and instructions on playing bomberman
     public void openInstructions() throws Exception {
-        Process p =Runtime.getRuntime().exec("notepad BombermanInstructions.txt");    
-    
+    	URL u = BomberManMain.class.getClassLoader().getResource("BombermanInstructions.txt");
+    	File file = new File(u.toURI());
+        Process p =Runtime.getRuntime().exec("notepad " + file.getPath());    
     }
     
     //redraw whole map when WindomOpen

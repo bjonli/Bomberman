@@ -4,12 +4,13 @@ import java.awt.*;
 import java.io.*;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
+import java.net.URL;
 
 // Bomb inherits ObjectClass as they are objects
 public class BombClass extends ObjectClass
 {
     // File that stores all images to be used for drawing bombs, All bomb instances use the same file.
-    private static File spriteSheetFile= new File("BombSprites.png");
+    private static URL spriteSheetFile= BombClass.class.getClassLoader().getResource("BombSprites.png");
 
     // image that sotres the spritesheet
     private static BufferedImage spriteSheet=new BufferedImage(120,40,BufferedImage.TYPE_INT_ARGB);
