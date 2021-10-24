@@ -1,4 +1,4 @@
-# Bomberman-Grade-11-
+# Bomberman
 Code written in Java within a month when I was in Grade 11.
 Final Project for my Grade 12 Computer Science Course.
 Sprites were taken off from the internet.
